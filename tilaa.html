@@ -1,0 +1,50 @@
+
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>kahvila </title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Tilaa</h1>
+    <nav aria-label="päävalikko">
+    <li><a href="index.html">päävalikko</a></li>
+    <li><a href="menu.html">menu</a></li>
+    <li><a href="tilaa.html">tilaa</a></li>
+    <li><a href="galleria.html">galleria</a></li>
+    <li><a href="yhteystiedot.html">yhteystiedot</a></li>
+   
+    
+    </nav>
+
+     <main>
+    <!-- TODO: Luo <form>:
+         - lisää label for + id parit
+         - järkevät type-arvot (email, number, tms.)
+         - method ja action attribuutit
+         - submit-painike
+    -->
+  <form action="submit" method="post">
+  <label for="Enimi">Nimi:</label><br>
+  <input type="text" id="Enimi" name="Enimi"><br>
+
+  <label for="email">Sähköposti:</label><br>
+  <input type="email" id="email" name="email"><br>
+
+  <label for="Tuotteet">Tuotteiden valinta:</label><br>
+<select id="Tuotteet" name="Tuotteet">
+  <option value="mocca jäälatte">mocca jäälatte</option>
+  <option value="vadelma latte">vadelma latte</option>
+  <option value="valkosuklaa latte">valkosuklaa latte</option>
+  <option value="korvapuusti">korvapuusti</option>
+</select><br>
+
+<label for="lisätiedot">Lisätiedot:</label><br>
+<textarea id="lisätiedot" name="lisätiedot" rows="4" cols="50"></textarea><br>
+
+  
+  <input type="submit" value="Submit">
+  </main>
