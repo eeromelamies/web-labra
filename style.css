@@ -1,4 +1,46 @@
-nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 1rem; background: #eee; } nav a {
+nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 1rem; background: #7fb071; } nav a {
 text-decoration: none; } nav a:hover { text-decoration: underline; } table { border-collapse: collapse;
-width: 100%; max-width: 800px; } th, td { border: 1px solid #ccc; padding: 0.5rem; } caption {
+width: 100%; max-width: 800px; } th, td { border: 1px solid #7fb071; padding: 1rem; } caption {
 text-align: left; font-weight: bold; margin-bottom: 0.25rem; }
+
+/*Perusasetukset ja muuttujat*/
+:root {
+ --color-text: #eeff00;
+ --color-accent: #104c22; 
+ --space: 1rem;
+}
+html { font-size: 16px; }
+body {
+ font-family: system-ui, sans-serif;
+ line-height: 1.5; /* >= 1.4 */
+ color: var(--color-text);
+ margin: 0;
+ background-color: rgb(157, 178, 159);
+}                                   
+
+.container {
+ max-width: 65ch; /* ~60–75 merkkiä */
+ margin: 0 auto;
+ padding: var(--space);
+}
+
+/* Navigaatio ja Linkkitilat*/
+a { text-decoration: underline; }
+a:hover { text-decoration: none; }
+:focus { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+
+/* Typografia*/
+h1, h2, h3 { line-height: 1.2; margin: 0 0 calc(var(--space) * .75); }
+p, ul, ol, table { margin: 0 0 var(--space); }
+
+ /*Box model -demo (etusivulle sopiva)*/
+.box {
+ margin: var(--space);
+ padding: calc(var(--space) * .75);
+ border: 2px solid #e5e7eb;
+ background: #7fb071;
+ text-align: center;
+}
+.title { color: #ff0000; }
+.title.strong { color: var(--color-accent); } /* yliajaa .title */
+
