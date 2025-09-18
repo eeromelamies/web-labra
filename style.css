@@ -5,9 +5,15 @@ text-align: left; font-weight: bold; margin-bottom: 0.25rem; }
 
 /*Perusasetukset ja muuttujat*/
 :root {
- --color-text: #eeff00;
+    
  --color-accent: #104c22; 
  --space: 1rem;
+ --color-text:#1f2937;
+ --accent:#b45309;
+ --color-hyväväri: rgb(157, 178, 159);
+}
+body{font-family:system-ui,sans-serif;line-height:1.5;color:var(--color-text);
+
 }
 html { font-size: 16px; }
 body {
@@ -15,7 +21,7 @@ body {
  line-height: 1.5; /* >= 1.4 */
  color: var(--color-text);
  margin: 0;
- background-color: rgb(157, 178, 159);
+ background-color: var(--color-hyväväri);
 }                                   
 
 .container {
@@ -43,4 +49,86 @@ p, ul, ol, table { margin: 0 0 var(--space); }
 }
 .title { color: #ff0000; }
 .title.strong { color: var(--color-accent); } /* yliajaa .title */
+
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 700px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Kortin sisäinen Flex */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card .actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Kombinaattorit */
+nav > ul > li + li {
+  margin-left: 1rem;
+}
+
+.cards .card + .card {
+  margin-top: 1rem; /* mobiili pystymarginaali */
+}
+
+/* Pseudo-elementti badge */
+.card h3 {
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+.card h3::before {
+  content: "Uutuus";   
+  position: absolute;
+  left: 0;
+  top: -0.60rem;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+/* Mikrointeraktio */
+.card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    
+}
+
+.btn {
+  outline: 3px solid transparent;   
+  outline-offset: 4px;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--color-accent);
+}
 
